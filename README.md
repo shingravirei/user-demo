@@ -9,6 +9,8 @@ The project consists of two parts, a rest api build with Nest and a frontend app
 - docker and docker-compose installed
 - node 18 installed
 
+obs: if you don't have docker and docker-compose installed or you're having some kind of problem with your current docker installation, you just need an mysql instance running on your PC with the credentials shown below
+
 ## Installation Instructions
 
 create an `.env` file at the root of the project with these variables
