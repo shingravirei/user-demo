@@ -13,7 +13,5 @@ export const useCreateUser = () => {
 	});
 };
 
-export const useGetUserById = (id?: string) => {
-	console.log({ id });
-	return useQuery(['users', id], () => getUserById(id as string));
-};
+export const useGetUserById = (id?: string) =>
+	useQuery(['users', id], () => getUserById(id as string));

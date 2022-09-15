@@ -12,11 +12,7 @@ export class UsersService {
 	) {}
 
 	create(createUserDto: CreateUserDto) {
-		try {
-			return this.usersRepository.save(createUserDto);
-		} catch (err) {
-			console.log({ err });
-		}
+		return this.usersRepository.save(createUserDto);
 	}
 
 	findAll() {
