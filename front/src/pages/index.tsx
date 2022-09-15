@@ -1,7 +1,14 @@
-const Home = (): JSX.Element => (
-	<div>
-		<h1>Home</h1>
-	</div>
-);
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+
+const Home = () => {
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		navigate('/users');
+	}, [navigate]);
+
+	return null;
+};
 
 export default Home;

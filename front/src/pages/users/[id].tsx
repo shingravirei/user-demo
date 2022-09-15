@@ -13,14 +13,21 @@ const UserInfo = () => {
 			<Heading as='h2' size='md' paddingBottom='16px'>
 				User Info
 			</Heading>
-			<Stack spacing={1}>
-				<Text sx={{ textTransform: 'capitalize' }}>
-					<Text as='b'>Full Name:</Text> {user?.name} {user?.lastname}
-				</Text>
-				<Text>
-					<Text as='b'>Email:</Text> {user?.email}
-				</Text>
-			</Stack>
+			{user && (
+				<Stack spacing={1}>
+					<Text sx={{ textTransform: 'capitalize' }}>
+						<Text as='b'>Full Name:</Text> {user.name}{' '}
+						{user.lastname}
+					</Text>
+					<Text>
+						<Text as='b'>Email:</Text> {user.email}
+					</Text>
+					<Text>
+						<Text as='b'>Created At:</Text>{' '}
+						{new Date(user.createdAt).toLocaleString()}
+					</Text>
+				</Stack>
+			)}
 		</Box>
 	);
 };

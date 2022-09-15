@@ -8,6 +8,7 @@ export interface User {
 	name: string;
 	lastname: string;
 	email: string;
+	createdAt: Date;
 }
 
 export const getUsers = (): Promise<User[]> => usersApi.get('users').json();
