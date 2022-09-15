@@ -1,15 +1,13 @@
 import {
+	BadRequestException,
+	Body,
 	Controller,
 	Get,
-	Post,
-	Body,
-	Patch,
 	Param,
-	Delete,
+	Post,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
@@ -26,17 +24,13 @@ export class UsersController {
 	}
 
 	@Get(':id')
-	findOne(@Param('id') id: number) {
-		return this.usersService.findOne(id);
-	}
+	async findOne(@Param('id') id: number) {
+		const user = await this.usersService.findOne(id);
 
-	@Patch(':id')
-	update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
-		return this.usersService.update(id, updateUserDto);
-	}
+		if (!user) {
+			throw new BadRequestException("user doesn't exists");
+		}
 
-	@Delete(':id')
-	remove(@Param('id') id: number) {
-		return this.usersService.remove(id);
+		return user;
 	}
 }
