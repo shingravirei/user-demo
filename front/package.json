@@ -1,9 +1,8 @@
 {
-	"name": "react-ts",
+	"name": "user-demo",
 	"version": "0.1.0",
 	"author": "shingravirei",
 	"license": "MIT",
-	"homepage": "https://github.com/shingravirei/react-ts#readme",
 	"type": "module",
 	"main": "src/lib.ts",
 	"typings": "src/lib.ts",
