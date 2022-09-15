@@ -10,6 +10,7 @@ async function bootstrap() {
 		app.use(morgan('tiny'));
 	}
 
+	app.enableCors();
 	app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
 	await app.listen(process.env.PORT);
