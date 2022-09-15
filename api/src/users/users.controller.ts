@@ -5,7 +5,9 @@ import {
 	Get,
 	Param,
 	Post,
+	UseFilters,
 } from '@nestjs/common';
+import { ApiExceptionFilter } from 'src/utils/api-exception.filter';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 
@@ -14,6 +16,7 @@ export class UsersController {
 	constructor(private readonly usersService: UsersService) {}
 
 	@Post()
+	@UseFilters(new ApiExceptionFilter())
 	create(@Body() createUserDto: CreateUserDto) {
 		return this.usersService.create(createUserDto);
 	}
