@@ -1,19 +1,25 @@
-import { useGetUsers } from '../users/hooks';
+import { AddIcon } from '@chakra-ui/icons';
+import { Button, Flex, useDisclosure } from '@chakra-ui/react';
+import CreateUserModal from '../users/Components/CreateUserModal';
+import UsersList from '../users/Components/UsersList';
 
 const Users = () => {
-	const { data: users, isLoading, isError } = useGetUsers();
-
-	if (isLoading) return <h1>loading user...</h1>;
-	if (isError) return <h1>something went wrong while loading the users</h1>;
+	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
 		<div>
-			<h1>Users</h1>
-			<div>
-				{users?.map((user) => (
-					<p key={user.email}>{user.name}</p>
-				))}
-			</div>
+			<CreateUserModal isOpen={isOpen} onClose={onClose} />
+			<Flex gap='16px' align='center' paddingBottom='16px'>
+				<Button
+					onClick={onOpen}
+					leftIcon={<AddIcon />}
+					size='sm'
+					colorScheme='blue'
+				>
+					Add User
+				</Button>
+			</Flex>
+			<UsersList />
 		</div>
 	);
 };

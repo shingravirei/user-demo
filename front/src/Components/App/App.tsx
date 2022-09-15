@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
 import routes from '~react-pages';
 import Navbar from '../Navbar';
+import { ChakraProvider, Container } from '@chakra-ui/react';
 
 const queryClient = new QueryClient();
 
@@ -10,10 +11,14 @@ const App = (): JSX.Element => {
 	return (
 		<div>
 			<QueryClientProvider client={queryClient}>
-				<Navbar />
-				<Suspense fallback={<p>loading....</p>}>
-					{useRoutes(routes)}
-				</Suspense>
+				<ChakraProvider>
+					<Container>
+						<Navbar />
+						<Suspense fallback={<p>loading....</p>}>
+							{useRoutes(routes)}
+						</Suspense>
+					</Container>
+				</ChakraProvider>
 			</QueryClientProvider>
 		</div>
 	);

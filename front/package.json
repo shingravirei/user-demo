@@ -20,10 +20,16 @@
 		"check": "tsc"
 	},
 	"dependencies": {
+		"@chakra-ui/icons": "^2.0.9",
+		"@chakra-ui/react": "^2.3.2",
+		"@emotion/react": "^11.10.4",
+		"@emotion/styled": "^11.10.4",
 		"@tanstack/react-query": "^4.3.4",
+		"framer-motion": "^7.3.5",
 		"ky": "^0.31.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-hook-form": "^7.35.0",
 		"react-router": "^6.3.0",
 		"react-router-dom": "^6.3.0"
 	},

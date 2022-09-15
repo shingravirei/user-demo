@@ -1,18 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Flex, Link } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar = (): JSX.Element => (
 	<nav>
-		<ul>
-			<li>
-				<Link to='/'>Home</Link>
-			</li>
-			<li>
-				<Link to='/about'>About</Link>
-			</li>
-			<li>
-				<Link to='/users'>Users</Link>
-			</li>
-		</ul>
+		<Flex gap='16px' margin='16px 0'>
+			<Link as={RouterLink} to='/'>
+				Home
+			</Link>
+
+			<Link as={RouterLink} to='/users'>
+				Users
+			</Link>
+		</Flex>
 	</nav>
 );
 

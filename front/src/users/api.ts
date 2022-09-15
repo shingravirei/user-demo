@@ -3,7 +3,7 @@ const BASE_URL = 'http://localhost:3000';
 
 const usersApi = ky.create({ prefixUrl: BASE_URL });
 
-interface User {
+export interface User {
 	id: number;
 	name: string;
 	lastname: string;
