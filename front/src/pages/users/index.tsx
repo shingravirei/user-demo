@@ -1,7 +1,7 @@
 import { AddIcon } from '@chakra-ui/icons';
 import { Button, Flex, useDisclosure } from '@chakra-ui/react';
-import CreateUserModal from '../users/Components/CreateUserModal';
-import UsersList from '../users/Components/UsersList';
+import CreateUserModal from '../../users/Components/CreateUserModal';
+import UsersList from '../../users/Components/UsersList';
 
 const Users = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();

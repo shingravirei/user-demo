@@ -15,5 +15,5 @@ export const getUsers = (): Promise<User[]> => usersApi.get('users').json();
 export const createUser = (body: Omit<User, 'id'>): Promise<User> =>
 	usersApi.post('users', { json: body }).json();
 
-export const getUserById = (id: number): Promise<User> =>
-	usersApi.get(`/users/${id}`).json();
+export const getUserById = (id: string): Promise<User> =>
+	usersApi.get(`users/${id}`).json();

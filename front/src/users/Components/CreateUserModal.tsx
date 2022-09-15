@@ -1,15 +1,14 @@
 import {
+	Button,
+	Flex,
+	Input,
 	Modal,
-	ModalOverlay,
+	ModalBody,
+	ModalCloseButton,
 	ModalContent,
 	ModalHeader,
-	ModalCloseButton,
-	ModalBody,
-	ModalFooter,
-	Button,
+	ModalOverlay,
 	Stack,
-	Input,
-	Flex,
 	useToast,
 } from '@chakra-ui/react';
 import { useEffect } from 'react';

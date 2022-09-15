@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { createUser, getUsers, User } from './api';
+import { createUser, getUserById, getUsers, User } from './api';
 
 export const useGetUsers = () => useQuery(['users'], getUsers);
 
@@ -11,4 +11,9 @@ export const useCreateUser = () => {
 			queryClient.invalidateQueries(['users']);
 		},
 	});
+};
+
+export const useGetUserById = (id?: string) => {
+	console.log({ id });
+	return useQuery(['users', id], () => getUserById(id as string));
 };
